@@ -3,155 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>NexusShop — Elite Gaming Store</title>
+    <title>NexusShop — Gaming E-Commerce</title>
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous">
-    
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap');
-
-:root{
-  --bg:#08090d; --panel:#101218; --panel2:#151821; --text:#f4f5f7;
-  --muted:#9097a7; --accent:#ff4655; --accent2:#ffd166; --green:#62f69a;
-  --line:rgba(255,255,255,.09); --radius:16px; --container:1240px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- margin:0;font-family:Inter,system-ui,sans-serif;color:var(--text);line-height:1.5;
- background:
- radial-gradient(circle at 8% 0%,rgba(255,70,85,.10),transparent 25%),
- radial-gradient(circle at 92% 20%,rgba(255,209,102,.06),transparent 24%),
- #08090d;
-}
-body:before{
- content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;
- background-image:linear-gradient(90deg,#fff 1px,transparent 1px),linear-gradient(#fff 1px,transparent 1px);
- background-size:42px 42px;
-}
-a{color:inherit;text-decoration:none} button,input{font:inherit}
-.container{width:100%;max-width:var(--container);margin:auto;padding:0 24px}
-
-/* Top navigation */
-header{
- position:sticky;top:0;z-index:50;background:rgba(8,9,13,.92);
- border-bottom:1px solid var(--line);backdrop-filter:blur(18px)
-}
-.header-inner{min-height:76px;display:flex;align-items:center;gap:24px}
-.brand{font-family:Orbitron,sans-serif;font-size:21px;font-weight:800;letter-spacing:.06em;white-space:nowrap}
-.brand .accent{color:var(--accent)}
-.main-nav{flex:1}
-.main-nav ul{display:flex;justify-content:center;gap:4px;list-style:none;padding:0;margin:0}
-.main-nav li a{padding:10px 13px;color:#b8becb;font-weight:600;border-radius:9px;transition:.2s}
-.main-nav li a:hover{background:#171a22;color:#fff}
-.search{width:255px;display:flex;align-items:center;gap:8px;background:#11131a;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
-.search:focus-within{border-color:rgba(255,70,85,.7);box-shadow:0 0 0 3px rgba(255,70,85,.08)}
-.search input{width:100%;border:0;outline:0;background:transparent;color:#fff}
-.search input::placeholder{color:#666d7b}
-.icon-btn{background:none;border:0;color:#aeb4c1;cursor:pointer;transition:.2s}
-.icon-btn:hover{color:#fff}
-.header-actions{display:flex;align-items:center;gap:13px}
-.cart{position:relative;padding:8px}
-.cart-count{position:absolute;right:-6px;top:-5px;background:var(--accent);color:#fff;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}
-.mobile-toggle{display:none;border:0;background:none;color:#fff;font-size:20px}
-
-/* Hero */
-.hero{
- min-height:540px;display:flex;align-items:center;position:relative;overflow:hidden;
- background:
- linear-gradient(90deg,rgba(8,9,13,.97) 8%,rgba(8,9,13,.74) 48%,rgba(8,9,13,.55)),
- url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1600&q=85') center/cover;
- border-bottom:1px solid var(--line)
-}
-.hero:before{content:"";position:absolute;right:-130px;top:80px;width:430px;height:430px;border:1px solid rgba(255,70,85,.18);transform:rotate(45deg)}
-.hero .container{position:relative}
-.hero h1{
- max-width:760px;margin:0 0 16px;font:800 clamp(38px,6vw,70px)/1.02 Orbitron,sans-serif;
- letter-spacing:-.03em;text-transform:uppercase
-}
-.hero h1:after{content:"";display:block;width:82px;height:4px;background:var(--accent);margin-top:22px}
-.hero p{max-width:650px;color:#c1c6d0;margin:0 0 28px;font-size:17px}
-.btn{display:inline-flex;align-items:center;gap:10px;border-radius:9px;padding:12px 20px;border:1px solid transparent;font-weight:800;cursor:pointer;transition:.2s}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 28px rgba(255,70,85,.2)}
-.btn-primary:hover{transform:translateY(-2px);background:#ff5967}
-.btn-ghost{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18);color:#fff;margin-left:8px}
-.btn-ghost:hover{background:#fff;color:#111}
-
-/* Sections */
-.section{padding:68px 0}
-.section .title{text-align:left;margin-bottom:28px}
-.section h2,.section h3{font-family:Orbitron,sans-serif;letter-spacing:.02em}
-.section h2{font-size:28px;margin:0 0 7px}
-.title p{margin:0}
-.muted{color:var(--muted)}
-.grid{display:grid;gap:16px}
-.categories{grid-template-columns:repeat(6,1fr)}
-.cat-card{
- background:linear-gradient(145deg,#141720,#0f1117);border:1px solid var(--line);
- border-radius:var(--radius);padding:24px 14px;text-align:left;cursor:pointer;
- transition:.22s;position:relative;overflow:hidden
-}
-.cat-card:after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--accent);transition:.25s}
-.cat-card:hover{transform:translateY(-5px);border-color:rgba(255,70,85,.4);background:#171a22}
-.cat-card:hover:after{width:100%}
-.cat-card .icon{width:48px;height:48px;border-radius:12px;background:#1d2029;display:grid;place-items:center;color:var(--accent);font-size:22px;margin-bottom:18px}
-.cat-card h4{margin:0;font-size:14px}
-.products{grid-template-columns:repeat(4,1fr)}
-.product{
- position:relative;background:#111319;border:1px solid var(--line);border-radius:15px;
- overflow:hidden;display:flex;flex-direction:column;transition:.22s
-}
-.product:hover{transform:translateY(-6px);border-color:rgba(255,70,85,.42);box-shadow:0 18px 45px rgba(0,0,0,.35)}
-.product img{width:100%;height:210px;object-fit:cover;display:block;filter:saturate(.9)}
-.product-body{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}
-.product h5{margin:0;font-size:15px}
-.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
-.price{font-weight:800;font-size:17px}.old-price{color:#697080;text-decoration:line-through;font-size:12px}
-.rating{color:#ffd166;font-size:12px}
-.product-footer{padding:12px 16px 16px;display:flex;gap:8px}
-.add-btn{flex:1;background:#1a1d25;color:#fff;border:1px solid #2a2e38;padding:10px;border-radius:8px;cursor:pointer;font-weight:700}
-.add-btn:hover{background:var(--accent);border-color:var(--accent)}
-.wish-btn{background:#1a1d25;color:#9da4b2;border:1px solid #2a2e38;padding:9px;border-radius:8px;cursor:pointer}
-.wish-btn:hover{color:var(--accent);border-color:var(--accent)}
-
-/* Deal */
-.deal{display:flex;background:#111319;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.3)}
-.deal img{width:52%;min-height:350px;object-fit:cover}
-.deal .content{padding:40px;flex:1}
-.deal .content h3{font-size:30px;margin:0 0 8px}
-.timer{display:flex;gap:10px;margin:24px 0;flex-wrap:wrap}
-.time-box{background:#0b0d12;border:1px solid #292d37;border-radius:10px;padding:12px 14px;min-width:76px;text-align:center;color:#fff}
-.time-box>div:first-child{font:700 24px Orbitron;color:var(--accent)}
-.deal .price{font-size:28px}.deal-discount{background:var(--accent)!important}
-
-/* Testimonials/newsletter/footer */
-.testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.testimonial{background:#111319;border:1px solid var(--line);padding:22px;border-radius:15px}
-.newsletter{background:linear-gradient(135deg,#171920,#101217);border:1px solid var(--line);border-radius:18px;padding:42px;text-align:center}
-.newsletter h3{font-size:27px;margin:0 0 7px}
-.newsletter input{padding:12px 14px;border-radius:8px;border:1px solid #2a2e38;background:#0b0d12;color:#fff;width:320px;max-width:100%;outline:0}
-.newsletter input:focus{border-color:var(--accent)}
-footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid var(--line);font-size:14px}
-
-/* Responsive */
-@media(max-width:1100px){
- .categories{grid-template-columns:repeat(3,1fr)} .products{grid-template-columns:repeat(3,1fr)}
- .main-nav{display:none}.mobile-toggle{display:block}
-}
-@media(max-width:800px){
- .header-inner{flex-wrap:wrap;padding:14px 0}.search{order:3;width:100%}
- .hero{min-height:500px}.deal{flex-direction:column}.deal img{width:100%;min-height:230px;height:230px}
- .products{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:560px){
- .container{padding:0 16px}.hero{min-height:480px}.hero h1{font-size:35px}.hero p{font-size:15px}
- .products,.categories,.testimonials{grid-template-columns:1fr}.section{padding:48px 0}
- .deal .content{padding:25px}.btn{padding:11px 15px}
-}
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#f6f7fb;--surface:#fff;--text:#171923;--muted:#747b8c;--accent:#5b4bdb;--accent2:#eeebff;--line:#e4e6ed;--danger:#e34b61;--radius:16px;--container:1240px;--shadow:0 10px 30px rgba(24,28,45,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input{font:inherit}.container{width:100%;max-width:var(--container);margin:auto;padding:0 24px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+.header-inner{min-height:74px;display:flex;align-items:center;gap:24px}.brand{font:700 21px "Space Grotesk",sans-serif;letter-spacing:-.03em;white-space:nowrap}.brand .accent{color:var(--accent)}
+.main-nav{flex:1}.main-nav ul{display:flex;justify-content:center;gap:3px;list-style:none;margin:0;padding:0}.main-nav li a{display:flex;align-items:center;gap:7px;padding:9px 12px;border-radius:9px;color:#626979;font-size:14px;font-weight:600;transition:.2s}.main-nav li a:hover{color:var(--accent);background:var(--accent2)}
+.search{width:245px;display:flex;align-items:center;gap:8px;background:#f4f5f8;border:1px solid transparent;border-radius:10px;padding:9px 12px}.search:focus-within{background:#fff;border-color:#cfc9ff;box-shadow:0 0 0 3px rgba(91,75,219,.08)}.search input{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-size:13px}.search input::placeholder{color:#9298a7}
+.icon-btn{background:none;color:#697081;border:0;cursor:pointer;transition:.2s}.icon-btn:hover{color:var(--accent)}.header-actions{display:flex;align-items:center;gap:12px}.cart{position:relative;padding:7px}.cart-count{position:absolute;right:-7px;top:-5px;width:19px;height:19px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800}.mobile-toggle{display:none;background:none;color:var(--text);font-size:20px;cursor:pointer}
+.hero{min-height:510px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,rgba(20,21,30,.96) 5%,rgba(20,21,30,.80) 48%,rgba(20,21,30,.42)),url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;color:#fff}.hero:after{content:"";position:absolute;width:420px;height:420px;right:-130px;bottom:-180px;border-radius:50%;border:1px solid rgba(255,255,255,.18);box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.018)}.hero .container{position:relative;z-index:1}.hero h1{max-width:760px;margin:0 0 18px;font:700 clamp(40px,6vw,68px)/1.03 "Space Grotesk",sans-serif;letter-spacing:-.045em}.hero p{max-width:650px;margin:0 0 28px;color:#d5d7df;font-size:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:11px 19px;border-radius:9px;font-weight:700;cursor:pointer;transition:.2s}.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(91,75,219,.25)}.btn-primary:hover{background:#4939c6;transform:translateY(-2px)}.btn-ghost{margin-left:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff}.btn-ghost:hover{background:#fff;color:#171821}
+.section{padding:64px 0}.section .title{margin-bottom:26px}.section h2,.section h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.025em}.section h2{font-size:28px;margin:0 0 6px}.title p{margin:0}.muted{color:var(--muted)}.grid{display:grid;gap:18px}
+.categories{grid-template-columns:repeat(6,1fr)}.cat-card{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:21px 17px;cursor:pointer;box-shadow:0 5px 20px rgba(24,28,45,.04);transition:.22s}.cat-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:.22s}.cat-card:hover{transform:translateY(-5px);border-color:#d5d0ff;box-shadow:0 18px 45px rgba(24,28,45,.14)}.cat-card:hover:before{transform:scaleX(1)}.cat-card .icon{width:46px;height:46px;display:grid;place-items:center;margin-bottom:15px;border-radius:12px;background:var(--accent2);color:var(--accent);font-size:20px}.cat-card h4{margin:0 0 4px;font-size:14px}
+.products{grid-template-columns:repeat(4,1fr)}.product{position:relative;overflow:hidden;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 5px 20px rgba(24,28,45,.045);transition:.22s}.product:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(24,28,45,.14);border-color:#d5d0ff}.product img{width:100%;height:210px;object-fit:cover;display:block}.product-body{flex:1;display:flex;flex-direction:column;gap:8px;padding:16px}.product h5{margin:0;font-size:15px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-weight:800;font-size:17px}.old-price{color:#9ba0ad;text-decoration:line-through;font-size:12px}.rating{color:#e6a900;font-size:12px}.product-footer{display:flex;gap:8px;padding:0 16px 16px}.add-btn{flex:1;padding:10px;border-radius:8px;background:#f1f2f6;border:1px solid #e2e4eb;color:var(--text);cursor:pointer;font-weight:700;transition:.2s}.add-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}.wish-btn{padding:9px 11px;border-radius:8px;background:#f7f7f9;border:1px solid #e2e4eb;color:#7f8594;cursor:pointer}.wish-btn:hover{color:var(--danger);border-color:#f1b8c2}
+.deal{display:flex;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.deal img{width:52%;min-height:340px;object-fit:cover}.deal .content{flex:1;padding:38px}.deal .content h3{margin:0 0 7px;font-size:30px}.timer{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.time-box{min-width:74px;padding:11px 13px;text-align:center;background:#f7f7fa;border:1px solid var(--line);border-radius:10px}.time-box>div:first-child{font:700 22px "Space Grotesk",sans-serif;color:var(--accent)}.deal .price{font-size:27px}.deal-discount{background:var(--accent)!important;color:#fff!important}
+.testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.testimonial{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:21px;box-shadow:0 5px 20px rgba(24,28,45,.04)}
+.newsletter{position:relative;overflow:hidden;padding:42px;text-align:center;color:#fff;background:linear-gradient(135deg,#1b1d2a,#2b2650);border-radius:18px;box-shadow:var(--shadow)}.newsletter h3{margin:0 0 7px;font-size:27px}.newsletter input{width:320px;max-width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.09);color:#fff;outline:0}.newsletter input::placeholder{color:#c6c7d0}
+footer{margin-top:10px;padding:42px 0;background:#fff;border-top:1px solid var(--line);font-size:14px}
+@media(max-width:1100px){.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(3,1fr)}.main-nav{display:none}.mobile-toggle{display:block}}
+@media(max-width:800px){.header-inner{flex-wrap:wrap;padding:13px 0}.search{order:3;width:100%}.hero{min-height:480px}.products{grid-template-columns:repeat(2,1fr)}.deal{flex-direction:column}.deal img{width:100%;height:240px;min-height:240px}}
+@media(max-width:560px){.container{padding:0 16px}.section{padding:48px 0}.hero h1{font-size:38px}.hero p{font-size:15px}.products,.categories,.testimonials{grid-template-columns:1fr}.deal .content{padding:25px}.newsletter{padding:32px 20px}}
 </style>
-
 
    
 </head>
@@ -215,8 +93,8 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
         <!-- Hero -->
         <section class="hero" role="img" aria-label="Hero banner">
             <div class="container">
-                <h1>LEVEL UP YOUR SETUP</h1>
-                <p>Premium tech, gaming gear and everyday essentials. Built for players, creators and anyone who wants a better setup.</p>
+                <h1>New Winter Collection  Premium Picks</h1>
+                <p>Discover the latest trends in fashion, technology and accessories — curated just for you. Enjoy limited-time deals and free shipping on selected items.</p>
                 <div>
                     <button class="btn btn-primary" id="shopNow">Shop Now <em class="fas fa-arrow-right"></em></button>
                     <button class="btn btn-ghost" id="exploreDeals">Explore Deals</button>
@@ -227,7 +105,7 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
         <!-- Categories -->
         <section class="section container" aria-labelledby="cat-title">
             <div class="title" id="cat-title">
-                <h2 class="section-title">EXPLORE LOADOUTS</h2>
+                <h2 class="section-title">Shop by Category</h2>
                 <p class="muted">Browse through our wide range of products across curated categories.</p>
             </div>
 
@@ -237,8 +115,8 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
         <!-- Products -->
         <section class="section container" aria-labelledby="prod-title">
             <div class="title" id="prod-title">
-                <h2>FEATURED GEAR</h2>
-                <p class="muted">Top picks for your next upgrade.</p>
+                <h2>Trending Products</h2>
+                <p class="muted">Popular picks based on recent activity.</p>
             </div>
 
             <div class="grid products" id="productsGrid" aria-live="polite"></div>
@@ -247,8 +125,8 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
         <!-- Deals -->
         <section id="deals" class="section container" aria-labelledby="deals-title">
             <div class="title" id="deals-title">
-                <h2>LIMITED DROP</h2>
-                <p class="muted">High-demand gear. Limited stock. Move fast.</p>
+                <h2>Flash Sale</h2>
+                <p class="muted">Limited-time offers — don't miss out!</p>
             </div>
 
             <div class="deal" style="align-items:stretch;">
@@ -326,8 +204,8 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
         <!-- Newsletter -->
         <section class="section container" aria-labelledby="news-title">
             <div class="newsletter" id="newsletter">
-                <h3 id="news-title">JOIN THE NEXUS</h3>
-                <p>Get drop alerts, new arrivals and exclusive offers.</p>
+                <h3 id="news-title">Stay in the loop</h3>
+                <p>Subscribe to get exclusive offers & new arrivals</p>
                 <form id="newsletterForm" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;" onsubmit="return false;">
                     <input id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
                     <button class="btn btn-primary" id="subscribeBtn">Subscribe</button>
@@ -583,10 +461,13 @@ footer{margin-top:10px;padding:42px 0;background:#07080b;border-top:1px solid va
                 renderProducts(PRODUCTS);
                 return;
             }
-            const filtered = PRODUCTS.filter(p =>
-                p.title.toLowerCase().includes(q) ||
-                p.category.toLowerCase().includes(q)
-            );
+            const filtered = PRODUCTS.filter(p => {
+                const category = CATEGORIES.find(c => c.id === p.category);
+                const categoryName = category ? category.name.toLowerCase() : p.category.toLowerCase();
+                return p.title.toLowerCase().includes(q) ||
+                    p.category.toLowerCase().includes(q) ||
+                    categoryName.includes(q);
+            });
             renderProducts(filtered);
         }
 
