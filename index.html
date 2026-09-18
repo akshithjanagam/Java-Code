@@ -3,221 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Ticket Booking</title>
+
+    <title>For Lasya ❤️</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
-        }
-
-        header {
-            background: #111827;
-            color: white;
-            padding: 20px 8%;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
 
-        header h1 {
-            color: #f59e0b;
-        }
+            font-family: "Segoe UI", sans-serif;
 
-        nav a {
+            background:
+                radial-gradient(circle at top, #ff758c, transparent 40%),
+                linear-gradient(135deg, #1a001f, #3b003d, #140014);
+
             color: white;
-            text-decoration: none;
-            margin-left: 25px;
         }
 
         .container {
-            width: 85%;
-            max-width: 1100px;
-            margin: 40px auto;
-        }
-
-        .booking-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        .showtimes {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .time-btn {
-            padding: 10px 18px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .time-btn:hover,
-        .time-btn.selected {
-            background: #f59e0b;
-            color: white;
-            border-color: #f59e0b;
-        }
-
-        .screen {
-            background: #ddd;
-            padding: 10px;
             text-align: center;
-            margin: 30px auto;
-            max-width: 500px;
-            border-radius: 50%;
-            font-weight: bold;
+            padding: 50px;
+            position: relative;
+            z-index: 10;
         }
 
-        .seats {
-            display: grid;
-            grid-template-columns: repeat(8, 40px);
-            gap: 12px;
-            justify-content: center;
-            margin: 25px 0;
+        .heart {
+            font-size: 90px;
+            animation: heartbeat 1.2s infinite;
+            filter: drop-shadow(0 0 25px #ff4d88);
         }
 
-        .seat {
-            width: 40px;
-            height: 40px;
-            background: #d1d5db;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 12px;
-        }
-
-        .seat:hover {
-            background: #9ca3af;
-        }
-
-        .seat.selected {
-            background: #22c55e;
-            color: white;
-        }
-
-        .seat.booked {
-            background: #ef4444;
-            color: white;
-            cursor: not-allowed;
-        }
-
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin: 20px 0;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .legend-box {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-
-        .available {
-            background: #d1d5db;
-        }
-
-        .selected-box {
-            background: #22c55e;
-        }
-
-        .booked-box {
-            background: #ef4444;
-        }
-
-        .summary {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-
-        .summary p {
-            margin: 10px 0;
-        }
-
-        .book-btn {
-            width: 100%;
-            padding: 14px;
+        h1 {
             margin-top: 20px;
-            border: none;
-            border-radius: 6px;
-            background: #f59e0b;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
+            font-size: clamp(42px, 8vw, 80px);
+
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #ffb6c9,
+                #ff4d88,
+                #fff
+            );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation: shine 4s infinite linear;
         }
 
-        .book-btn:hover {
-            background: #d97706;
+        .message {
+            margin-top: 25px;
+            font-size: 24px;
+            color: #ffd6e2;
+            letter-spacing: 2px;
         }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 50px;
-            background: #111827;
-            color: white;
+        .sub {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #ffb6c9;
+            opacity: 0.8;
         }
 
-        @media (max-width: 600px) {
-            .seats {
-                grid-template-columns: repeat(8, 30px);
-                gap: 6px;
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatUp linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
             }
 
-            .seat {
-                width: 30px;
-                height: 30px;
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes shine {
+
+            0% {
+                background-position: 0%;
             }
 
-            .container {
-                width: 95%;
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
             }
         }
     </style>
@@ -225,284 +131,35 @@
 
 <body>
 
-<header>
-    <h1>MovieBook</h1>
+    <div class="container">
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Movies</a>
-        <a href="#">My Bookings</a>
-    </nav>
-</header>
+        <div class="heart">❤️</div>
 
-<div class="container">
+        <h1>Lasya Ma'am</h1>
 
-    <div class="booking-card">
-
-        <h2>Book Your Movie Ticket</h2>
-
-        <!-- Movie -->
-        <div class="form-group">
-            <label for="movie">Select Movie</label>
-
-            <select id="movie">
-                <option value="250">Avengers: Endgame - ₹250</option>
-                <option value="200">Inception - ₹200</option>
-                <option value="220">Interstellar - ₹220</option>
-                <option value="180">The Dark Knight - ₹180</option>
-            </select>
+        <div class="message">
+            I Love You ❤️
         </div>
 
-        <!-- Date -->
-        <div class="form-group">
-            <label for="date">Select Date</label>
-
-            <select id="date">
-                <option>Today</option>
-                <option>Tomorrow</option>
-                <option>Day After Tomorrow</option>
-            </select>
-        </div>
-
-        <!-- Show Time -->
-        <div class="form-group">
-
-            <label>Select Show Time</label>
-
-            <div class="showtimes">
-
-                <button class="time-btn">10:00 AM</button>
-                <button class="time-btn">1:00 PM</button>
-                <button class="time-btn">4:00 PM</button>
-                <button class="time-btn">7:00 PM</button>
-                <button class="time-btn">10:00 PM</button>
-
-            </div>
-
-        </div>
-
-        <!-- Screen -->
-        <div class="screen">
-            SCREEN
-        </div>
-
-        <!-- Seats -->
-        <div class="seats">
-
-            <div class="seat">A1</div>
-            <div class="seat">A2</div>
-            <div class="seat booked">A3</div>
-            <div class="seat">A4</div>
-            <div class="seat">A5</div>
-            <div class="seat">A6</div>
-            <div class="seat booked">A7</div>
-            <div class="seat">A8</div>
-
-            <div class="seat">B1</div>
-            <div class="seat">B2</div>
-            <div class="seat">B3</div>
-            <div class="seat booked">B4</div>
-            <div class="seat">B5</div>
-            <div class="seat">B6</div>
-            <div class="seat">B7</div>
-            <div class="seat">B8</div>
-
-            <div class="seat">C1</div>
-            <div class="seat">C2</div>
-            <div class="seat">C3</div>
-            <div class="seat">C4</div>
-            <div class="seat booked">C5</div>
-            <div class="seat">C6</div>
-            <div class="seat">C7</div>
-            <div class="seat">C8</div>
-
-            <div class="seat">D1</div>
-            <div class="seat">D2</div>
-            <div class="seat">D3</div>
-            <div class="seat">D4</div>
-            <div class="seat">D5</div>
-            <div class="seat">D6</div>
-            <div class="seat">D7</div>
-            <div class="seat">D8</div>
-
-        </div>
-
-        <!-- Legend -->
-        <div class="legend">
-
-            <div class="legend-item">
-                <div class="legend-box available"></div>
-                Available
-            </div>
-
-            <div class="legend-item">
-                <div class="legend-box selected-box"></div>
-                Selected
-            </div>
-
-            <div class="legend-item">
-                <div class="legend-box booked-box"></div>
-                Booked
-            </div>
-
-        </div>
-
-        <!-- Summary -->
-        <div class="summary">
-
-            <h3>Booking Summary</h3>
-
-            <p>
-                <strong>Movie:</strong>
-                <span id="summaryMovie">Avengers: Endgame</span>
-            </p>
-
-            <p>
-                <strong>Seats:</strong>
-                <span id="summarySeats">None</span>
-            </p>
-
-            <p>
-                <strong>Tickets:</strong>
-                <span id="ticketCount">0</span>
-            </p>
-
-            <p>
-                <strong>Total:</strong>
-                ₹<span id="total">0</span>
-            </p>
-
-            <button class="book-btn" onclick="bookTicket()">
-                Proceed to Payment
-            </button>
-
+        <div class="sub">
+            You make every moment a little more beautiful ✨
         </div>
 
     </div>
 
-</div>
 
-<footer>
-    © 2026 MovieBook. All Rights Reserved.
-</footer>
+    <!-- Floating Hearts -->
 
-
-<script>
-
-    const seats = document.querySelectorAll(".seat:not(.booked)");
-
-    const movie = document.getElementById("movie");
-
-    const summaryMovie =
-        document.getElementById("summaryMovie");
-
-    const summarySeats =
-        document.getElementById("summarySeats");
-
-    const ticketCount =
-        document.getElementById("ticketCount");
-
-    const total =
-        document.getElementById("total");
-
-
-    // Movie selection
-    movie.addEventListener("change", function () {
-
-        const movieName =
-            this.options[this.selectedIndex].text.split(" - ")[0];
-
-        summaryMovie.textContent = movieName;
-
-        updateSummary();
-
-    });
-
-
-    // Seat selection
-    seats.forEach(function (seat) {
-
-        seat.addEventListener("click", function () {
-
-            this.classList.toggle("selected");
-
-            updateSummary();
-
-        });
-
-    });
-
-
-    // Update booking summary
-    function updateSummary() {
-
-        const selectedSeats =
-            document.querySelectorAll(".seat.selected");
-
-        const seatNames = [];
-
-        selectedSeats.forEach(function (seat) {
-            seatNames.push(seat.textContent);
-        });
-
-        summarySeats.textContent =
-            seatNames.length > 0
-                ? seatNames.join(", ")
-                : "None";
-
-        ticketCount.textContent =
-            selectedSeats.length;
-
-        const price =
-            parseInt(movie.value);
-
-        total.textContent =
-            selectedSeats.length * price;
-    }
-
-
-    // Show time selection
-    const timeButtons =
-        document.querySelectorAll(".time-btn");
-
-    timeButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            timeButtons.forEach(function (btn) {
-                btn.classList.remove("selected");
-            });
-
-            this.classList.add("selected");
-
-        });
-
-    });
-
-
-    // Booking
-    function bookTicket() {
-
-        const selectedSeats =
-            document.querySelectorAll(".seat.selected");
-
-        if (selectedSeats.length === 0) {
-
-            alert("Please select at least one seat.");
-
-            return;
-        }
-
-        alert(
-            "Booking successful! 🎬\n\n" +
-            "Movie: " + summaryMovie.textContent + "\n" +
-            "Seats: " + summarySeats.textContent + "\n" +
-            "Total: ₹" + total.textContent
-        );
-
-    }
-
-</script>
+    <span class="floating-heart" style="left: 5%; animation-duration: 8s;">❤️</span>
+    <span class="floating-heart" style="left: 15%; animation-duration: 11s;">💗</span>
+    <span class="floating-heart" style="left: 25%; animation-duration: 7s;">💕</span>
+    <span class="floating-heart" style="left: 35%; animation-duration: 10s;">❤️</span>
+    <span class="floating-heart" style="left: 45%; animation-duration: 8s;">💖</span>
+    <span class="floating-heart" style="left: 55%; animation-duration: 12s;">💗</span>
+    <span class="floating-heart" style="left: 65%; animation-duration: 9s;">💕</span>
+    <span class="floating-heart" style="left: 75%; animation-duration: 7s;">❤️</span>
+    <span class="floating-heart" style="left: 85%; animation-duration: 11s;">💖</span>
+    <span class="floating-heart" style="left: 95%; animation-duration: 8s;">💗</span>
 
 </body>
 </html>
